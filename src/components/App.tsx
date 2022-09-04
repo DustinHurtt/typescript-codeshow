@@ -2,6 +2,7 @@ import * as esbuild from 'esbuild-wasm'
 import { useState, useEffect, useRef } from "react";
 import { unpkgPathPlugin } from '../plugins/unpackage-path-plugin';
 import { fetchPlugin } from '../plugins/fetch-plugin';
+import CodeEditor from './code-editor';
 
 const App = () => {
     const ref = useRef<any>();
@@ -68,6 +69,7 @@ const App = () => {
 
     return (
             <div>
+                <CodeEditor/>
                 <textarea value={input} onChange={e => setInput(e.target.value)} aria-label="textarea"></textarea>
                 <div>
                     <button onClick={onClick}>Submit</button>
